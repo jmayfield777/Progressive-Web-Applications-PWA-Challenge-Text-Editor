@@ -22,7 +22,7 @@ export const putDb = async (content) => {
   // create new transaction and specify the transaction
   const tx = textDb.transaction("jate", "readwrite");
 
-  // Open up the object store
+  // open up the object store
   const store = tx.objectStore("jate");
 
   // use the put method to store and update content
@@ -31,9 +31,28 @@ export const putDb = async (content) => {
   // receive confirmation of the request
   const result = await request;
   console.log("Data saved to the database!", result);
-}
+};
 
 // TODO: Add logic for a method that gets all the content from the database
-export const getDb = async () => console.error('getDb not implemented');
+export const getDb = async () => {
+  console.log("GET from the database");
+
+  // creates connection to the database and provide the version number
+  const textDb = await openDB("jate", 1);
+
+  // create new transaction and specify the transaction
+  const tx = textDb.transaction("jate", "readonly");
+
+  // open up the object store
+  const store = tx.objectStore("jate");
+
+  // use the get method to get all the content
+  const request = store.get(1);
+
+  // receive confirmation of the request
+  const result = await request;
+  console.log("result.value", result);
+  return result?.value;
+};
 
 initdb();
