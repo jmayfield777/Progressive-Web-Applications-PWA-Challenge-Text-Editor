@@ -2,9 +2,10 @@
 
 ## Description
 
-This projects serves as a text editor that utilizes Express.js, Node.js, IndexedDB, and Webpack.  CRUD routes (using the "idb" package) were implemented to allow the insertion and viewing of the data on the back end. This project further serves to improve skills with developing Progressive Web Applications -- allowing the user to download the application to their local machine and, also, use offline. 
+This projects serves is a text editor that utilizes Express.js, Node.js, IndexedDB, and Webpack.  CRUD routes (using the "idb" package) were implemented to allow the insertion and viewing of the data on the back end. This project further serves to improve skills with developing Progressive Web Applications -- allowing the user to download the application to their local machine and, also, use offline. 
 
-Screenshot - 
+
+![Screenshot of deployed app](<Screenshot 2024-04-23 at 4.59.01 PM.png>)
 
 
 ## Table of Contents
@@ -25,7 +26,7 @@ Screenshot -
 
 Users can navigate to the following URL to access the text editor. Once on the site, you may also download the application to your computer using the "install" button in the top left corner of the page: 
 
-URL - 
+https://jate-text-editor-g7v1.onrender.com/
 
 ## Technologies
 
@@ -42,6 +43,7 @@ This application uses the following technologies:
 
 Just visit the following URL to use the application and download to your computer:
 
+https://jate-text-editor-g7v1.onrender.com/
 
 Clone this repo and save it locally to your computer if you would like to view the source code and add further functionality.
 
