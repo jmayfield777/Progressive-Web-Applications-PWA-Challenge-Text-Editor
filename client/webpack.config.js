@@ -18,7 +18,37 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      
+      // Webpack plugin to generate html files and bundles
+      new HtmlWebpackPlugin({
+        template: "./index.html",
+        title: "Text Editor",
+      }),
+
+      // Service worker
+      new InjectManifest({
+        swSrc: "./src-sw.js",
+        swDest: "src-sw.js",
+      }),
+
+      // Create manifest.json file
+      new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
+        name: "Text Editor",
+        short_name: "Text",
+        description: "Take notes without an internet connection!",
+        background_color: "#225ca3",
+        theme_color: "#225ca3",
+        start_url: "/",
+        publicPath: "/",
+        icons: [
+          {
+            src: path.resolve("src/images/logo.png"),
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join("assets", "icons"),
+          },
+        ],
+      }),
     ],
 
     module: {
